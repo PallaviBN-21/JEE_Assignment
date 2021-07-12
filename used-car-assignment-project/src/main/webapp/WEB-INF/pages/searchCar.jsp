@@ -11,10 +11,9 @@
 </head>
 <body>
 <form:form method="POST" action="carDetails/search" >
-<form:select name="brand" , path="${list}">
-
-<form:option value="${list}">Model</form:option>
-<form:input path="${list}"/>>
+<form:label path="model"> Model </form:label>
+<form:select path="model" items="${brands}">
+<option value="${brands}">Java</option>
 
 </form:select>
 

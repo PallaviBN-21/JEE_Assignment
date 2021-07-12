@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View Car Details</title>
+<title>View Car Details by Brand</title>
 <style>
 table{
 border:2px solid blue;
@@ -18,6 +18,7 @@ tr,th,td{
 border:2px solid blue;
 }
 </style>
+
 </head>
 <body>
 <h1>

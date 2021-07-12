@@ -9,6 +9,9 @@
 <title>Sell</title>
 </head>
 <body>
+<h1>
+<c:out value="${heading}"/><br/>
+</h1>
 <p> No of Car Details Added</p> <c:out value="${rowAdded}"/> 
 
 <form:form method="post" action="carDetails" >

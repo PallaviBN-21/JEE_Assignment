@@ -37,11 +37,14 @@ public class CarRepository {
 	
 	public List<CarDetails> getAllModel(){
 		String sql = "select model from carDetails";
-		List<CarDetails> carList=
+		List<CarDetails> brands=
 				template.query(sql, BeanPropertyRowMapper.newInstance(CarDetails.class));
-		return carList;
+		
+		return brands;
 	}
 	
+
+
 	public List<CarDetails> getCarDetailsByBrand(String model){
 		
 		String sql = "select * from carDetails WHERE model ='"+ model+"'";

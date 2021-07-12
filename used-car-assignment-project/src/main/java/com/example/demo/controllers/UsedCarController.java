@@ -35,7 +35,7 @@ public class UsedCarController {
 	
 	@RequestMapping(value = "/carDetails", method= RequestMethod.POST)
 	public String SubmitForm(@ModelAttribute ("command") CarDetails carDetail , Model model) {
-		
+		model.addAttribute("heading", "Enter all the details of the car");
 		int rowAdded = repo.addCarDetails(carDetail);
 		model.addAttribute("rowAdded",rowAdded);
 		return "addCarDetails";
@@ -43,25 +43,24 @@ public class UsedCarController {
 	
 	@RequestMapping(value = "/carDetails/view", method= RequestMethod.GET)
 	public String findAllCustomers(Model model) {
+		model.addAttribute("heading","The Car details are");
 		List<CarDetails> list=repo.getAllCarDetails();
 		model.addAttribute("list",list);
 		return "showCarDetails";
 	}
 	
-	@RequestMapping(value = "/carDetails/search", method= RequestMethod.POST)
-	public String findCarByBrand(Model model,  @RequestParam String brand) {
+	@RequestMapping(value = "/carDetails/search", method= RequestMethod.GET)
+	public String findCarByBrand(Model model) {
 		
-		//model.addAttribute("command",carDetail);
-		List<CarDetails> list=repo.getAllModel();
-		model.addAttribute("list",list);
+		model.addAttribute("command",carDetail);
 		return "searchCar";
 	}
 	
-	@RequestMapping(value = "/carDetails/view", method= RequestMethod.GET)
+	@RequestMapping(value = "/carDetails/showSelectedCars", method= RequestMethod.POST)
 	public String findCarForTheRequestedBrand(Model model , @RequestParam String brand) {
-		
+		model.addAttribute("heading", "The car details by Brand are:");
 		List<CarDetails> list=repo.getCarDetailsByBrand(brand);
 		model.addAttribute("list",list);
-		return "showCarDetails";
+		return "carDetailOnBrand";
 	}
 }
