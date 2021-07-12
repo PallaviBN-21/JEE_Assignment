@@ -58,7 +58,7 @@ public class UsedCarController {
 	
 	@RequestMapping(value = "/carDetails/showSelectedCars", method= RequestMethod.POST)
 	public String findCarForTheRequestedBrand(Model model , @RequestParam String brand) {
-		model.addAttribute("heading", "The car details by Brand are:");
+		model.addAttribute("heading", "The car details based on brand");
 		List<CarDetails> list=repo.getCarDetailsByBrand(brand);
 		model.addAttribute("list",list);
 		return "carDetailOnBrand";

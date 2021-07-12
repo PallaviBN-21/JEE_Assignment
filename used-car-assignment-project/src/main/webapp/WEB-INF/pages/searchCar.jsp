@@ -10,16 +10,15 @@
 <title>Car Details by Model</title>
 </head>
 <body>
+
 <form:form method="POST" action="carDetails/search" >
 <form:label path="model"> Model </form:label>
 <form:select path="model" items="${brands}">
-<option value="${brands}">Java</option>
+<option value="${brands}">${brands}</option>
 
 </form:select>
 
-
-<input type="submit" value="Search">
-
+<input type="button" value="Search" name="Search" onclick="document.forms[0].action='carDetailsOnBrand.jsp'; return true;"/>
 </form:form>
 </body>
 </html>
